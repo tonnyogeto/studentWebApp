@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ikonex Academy | Results</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script defer src="/js/app.js"></script>
+</head>
+<body data-page="results">
+	<div class="app-shell">
+		<aside class="sidebar"><div class="sidebar-header"><div class="brand"><div class="brand-badge"></div><div class="brand-text"><h1>Ikonex Academy</h1><p>Student Management System</p></div></div><button class="sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div><nav class="sidebar-nav"><a href="/index.html"><span class="sidebar-icon">⌂</span><span>Dashboard</span></a><a href="/students.html"><span class="sidebar-icon">S</span><span>Students</span></a><a href="/class-streams.html"><span class="sidebar-icon">C</span><span>Class Streams</span></a><a href="/subjects.html"><span class="sidebar-icon">B</span><span>Subjects</span></a><a href="/results.html"><span class="sidebar-icon">R</span><span>Results</span></a></nav><div class="sidebar-foot"><div class="sidebar-label">Results</div><div class="sidebar-subtitle">Rank, grade, and export report cards.</div></div></aside>
+		<main class="main-content stack"><header class="topbar"><div class="topbar-title"><h1>Results</h1><p>Ranked results and PDF reports.</p></div><div class="topbar-actions"><button class="mobile-sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div></header><section class="section"><div class="header-row"><div><h2>Result filters</h2><p class="subtitle">Pick a term, class stream, and student to inspect performance.</p></div></div><div class="form-grid three"><div class="field"><label for="resultsTerm">Term</label><input id="resultsTerm" value="Term 1"></div><div class="field"><label for="resultsClassStreamId">Class stream</label><select id="resultsClassStreamId"></select></div><div class="field"><label for="resultsStudentId">Student</label><select id="resultsStudentId"></select></div></div><div class="actions"><button id="loadClassResults" type="button" class="primary">Load class results</button><button id="loadStudentResults" type="button" class="button">Load student results</button><a id="downloadClassReport" class="download-link primary" href="#" target="_blank" rel="noopener">Download class PDF</a><a id="downloadStudentReport" class="download-link" href="#" target="_blank" rel="noopener">Download student PDF</a></div></section><div class="grid"><section class="report-box"><div class="header-row"><div><h2>Class ranking</h2><p id="classResultsSummary" class="subtitle">Choose a class stream to view ranked students.</p></div></div><div class="table-wrap"><table><thead><tr><th>Rank</th><th>Admission No</th><th>Student</th><th>Total</th><th>Average</th><th>Grade</th></tr></thead><tbody id="classResultsTableBody"></tbody></table></div></section><section class="report-box"><div class="header-row"><div><h2>Student breakdown</h2><p id="studentResultsSummary" class="subtitle">Choose a student to view subject scores.</p></div></div><div class="table-wrap"><table><thead><tr><th>Subject</th><th>Score</th></tr></thead><tbody id="studentResultsTableBody"></tbody></table></div></section></div></main>
+	</div>
+</body>
+</html>

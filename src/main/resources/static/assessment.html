@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Laura's Academy | Assessment</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script defer src="/js/app.js"></script>
+</head>
+<body data-page="assessment">
+	<div class="app-shell">
+		<aside class="sidebar">
+			<div class="sidebar-header"><div class="brand"><div class="brand-badge"></div><div class="brand-text"><h1>Laura's Academy</h1><p>Student management made simple</p></div></div><button class="sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div>
+			<nav class="sidebar-nav"><a href="/index.html"><span class="sidebar-icon">⌂</span><span>Welcome</span></a><a href="/class-streams.html"><span class="sidebar-icon">S</span><span>Streams</span></a><a href="/results.html"><span class="sidebar-icon">R</span><span>Reporting</span></a><a href="/students.html"><span class="sidebar-icon">U</span><span>Students</span></a><a href="/subjects.html"><span class="sidebar-icon">B</span><span>Subjects</span></a><a href="/assessment.html"><span class="sidebar-icon">A</span><span>Assessment</span></a></nav>
+			<div class="sidebar-foot"><div class="sidebar-label">Assessment</div><div class="sidebar-subtitle">Record and review scores by student and term.</div></div>
+		</aside>
+		<main class="main-content stack">
+			<header class="topbar"><div class="topbar-title"><h1>Assessment</h1><p>Record scores and review a student's term results.</p></div><div class="topbar-actions"><button class="mobile-sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div></header>
+			<div class="actions"><a class="button primary" href="#assessment-record">Add assessment</a><a class="button" href="#assessment-history">View assessments</a></div>
+			<div class="grid">
+				<section class="section assessment-card" id="assessment-record">
+					<div class="header-row"><div><h2>Record an assessment</h2><p class="subtitle">Choose a student, subject, term, and score.</p></div></div>
+					<form id="assessmentForm" class="form-grid">
+						<div class="field"><label for="assessmentStudentId">Student</label><select id="assessmentStudentId" required></select></div>
+						<div class="field"><label for="assessmentSubjectId">Subject</label><select id="assessmentSubjectId" required></select></div>
+						<div class="field"><label for="assessmentTerm">Term</label><input id="assessmentTerm" value="Term 1" required></div>
+						<div class="field"><label for="assessmentScore">Score</label><input id="assessmentScore" type="number" min="0" max="100" step="0.01" required></div>
+						<div class="field full"><div class="actions"><button type="submit" class="primary">Save assessment</button><button type="button" class="button" data-reset>Clear</button></div><div class="notice"></div></div>
+					</form>
+				</section>
+				<section class="section assessment-card" id="assessment-history">
+					<div class="header-row"><div><h2>Assessment history</h2><p class="subtitle">Review the scores already recorded for a student in a term.</p></div></div>
+					<div class="form-grid">
+						<div class="field"><label for="assessmentHistoryStudentId">Student</label><select id="assessmentHistoryStudentId"></select></div>
+						<div class="field"><label for="assessmentHistoryTerm">Term</label><input id="assessmentHistoryTerm" value="Term 1"></div>
+					</div>
+					<div class="actions"><button id="loadAssessmentHistory" type="button" class="primary">Load history</button></div>
+					<div id="assessmentHistorySummary" class="summary">Choose a student to view their assessment history.</div>
+				</section>
+			</div>
+			<section class="table-card"><div class="header-row"><div><h2>Recorded assessments</h2><p class="subtitle">The table below shows the selected student's scores for the chosen term.</p></div></div><div class="table-wrap"><table><thead><tr><th>Subject</th><th>Term</th><th>Score</th></tr></thead><tbody id="assessmentHistoryTableBody"></tbody></table></div></section>
+		</main>
+	</div>
+	<div class="sidebar-overlay" aria-hidden="true"></div>
+</body>
+</html>

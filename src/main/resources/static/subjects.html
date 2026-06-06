@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ikonex Academy | Subjects</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script defer src="/js/app.js"></script>
+</head>
+<body data-page="subjects">
+	<div class="app-shell">
+		<aside class="sidebar"><div class="sidebar-header"><div class="brand"><div class="brand-badge"></div><div class="brand-text"><h1>Ikonex Academy</h1><p>Student Management System</p></div></div><button class="sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div><nav class="sidebar-nav"><a href="/index.html"><span class="sidebar-icon">⌂</span><span>Dashboard</span></a><a href="/students.html"><span class="sidebar-icon">S</span><span>Students</span></a><a href="/class-streams.html"><span class="sidebar-icon">C</span><span>Class Streams</span></a><a href="/subjects.html"><span class="sidebar-icon">B</span><span>Subjects</span></a><a href="/results.html"><span class="sidebar-icon">R</span><span>Results</span></a></nav><div class="sidebar-foot"><div class="sidebar-label">Subjects</div><div class="sidebar-subtitle">Create, link, and maintain academic subjects.</div></div></aside>
+		<main class="main-content stack"><header class="topbar"><div class="topbar-title"><h1>Subjects</h1><p>CRUD plus class stream linking.</p></div><div class="topbar-actions"><button class="mobile-sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div></header><div class="grid"><section class="section"><div class="header-row"><div><h2>Subject setup</h2><p class="subtitle">Create or update subjects used by class streams.</p></div></div><form id="subjectForm" class="form-grid"><div class="field"><label for="subjectCode">Subject code</label><input id="subjectCode" name="subjectCode" required></div><div class="field"><label for="subjectName">Subject name</label><input id="subjectName" name="subjectName" required></div><div class="field full"><div class="actions"><button type="submit" class="primary">Save subject</button><button type="button" class="button" data-reset>Clear</button></div><div class="notice"></div></div></form></section><section class="section"><div class="header-row"><div><h2>Assign to class stream</h2><p class="subtitle">Link a subject to the stream that should offer it.</p></div></div><form id="subjectAssignForm" class="form-grid"><div class="field"><label for="subjectAssignStreamId">Class stream</label><select id="subjectAssignStreamId" required></select></div><div class="field"><label for="subjectAssignSubjectId">Subject</label><select id="subjectAssignSubjectId" required></select></div><div class="field full"><div class="actions"><button type="submit" class="primary">Assign</button></div><div class="notice"></div></div></form></section></div><section class="table-card"><div class="header-row"><div><h2>Subject list</h2><p class="subtitle">Manage all subjects and review linked class streams.</p></div></div><div class="table-wrap"><table><thead><tr><th>Code</th><th>Name</th><th>Linked streams</th><th>Actions</th></tr></thead><tbody id="subjectsTableBody"></tbody></table></div></section></main>
+	</div>
+</body>
+</html>

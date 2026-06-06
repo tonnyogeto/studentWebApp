@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ikonex Academy | Students</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script defer src="/js/app.js"></script>
+</head>
+<body data-page="students">
+	<div class="app-shell">
+		<aside class="sidebar">
+			<div class="sidebar-header">
+				<div class="brand">
+					<div class="brand-badge"></div>
+					<div class="brand-text"><h1>Ikonex Academy</h1><p>Student Management System</p></div>
+				</div>
+				<button class="sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button>
+			</div>
+			<nav class="sidebar-nav">
+				<a href="/index.html"><span class="sidebar-icon">⌂</span><span>Dashboard</span></a>
+				<a href="/students.html"><span class="sidebar-icon">S</span><span>Students</span></a>
+				<a href="/class-streams.html"><span class="sidebar-icon">C</span><span>Class Streams</span></a>
+				<a href="/subjects.html"><span class="sidebar-icon">B</span><span>Subjects</span></a>
+				<a href="/results.html"><span class="sidebar-icon">R</span><span>Results</span></a>
+			</nav>
+			<div class="sidebar-foot"><div class="sidebar-label">Students</div><div class="sidebar-subtitle">Create, edit, and assign learners to streams.</div></div>
+		</aside>
+		<main class="main-content stack">
+			<header class="topbar"><div class="topbar-title"><h1>Students</h1><p>CRUD plus class stream assignment.</p></div><div class="topbar-actions"><button class="mobile-sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div></header>
+
+			<section class="section">
+				<div class="header-row"><div><h2>Student registration</h2><p class="subtitle">Create or update student records and place them in a class stream.</p></div></div>
+				<form id="studentForm" class="form-grid">
+					<div class="field"><label for="studentAdmissionNumber">Admission number</label><input id="studentAdmissionNumber" name="admissionNumber" required></div>
+					<div class="field"><label for="studentFirstName">First name</label><input id="studentFirstName" name="firstName" required></div>
+					<div class="field"><label for="studentLastName">Last name</label><input id="studentLastName" name="lastName" required></div>
+					<div class="field"><label for="studentGender">Gender</label><input id="studentGender" name="gender" required></div>
+					<div class="field"><label for="studentDateOfBirth">Date of birth</label><input id="studentDateOfBirth" name="dateOfBirth" type="date"></div>
+					<div class="field"><label for="studentClassStreamId">Class stream</label><select id="studentClassStreamId" name="classStreamId" required></select></div>
+					<div class="field full"><div class="actions"><button type="submit" class="primary">Save student</button><button type="button" class="button" data-reset>Clear</button></div><div class="notice"></div></div>
+				</form>
+			</section>
+
+			<section class="table-card">
+				<div class="header-row"><div><h2>Student list</h2><p class="subtitle">Use edit and delete actions to maintain student records.</p></div></div>
+				<div class="table-wrap"><table><thead><tr><th>Admission No</th><th>Name</th><th>Gender</th><th>DOB</th><th>Stream Code</th><th>Stream Name</th><th>Actions</th></tr></thead><tbody id="studentsTableBody"></tbody></table></div>
+			</section>
+		</main>
+	</div>
+</body>
+</html>

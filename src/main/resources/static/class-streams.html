@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ikonex Academy | Class Streams</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script defer src="/js/app.js"></script>
+</head>
+<body data-page="class-streams">
+	<div class="app-shell">
+		<aside class="sidebar">
+			<div class="sidebar-header"><div class="brand"><div class="brand-badge"></div><div class="brand-text"><h1>Ikonex Academy</h1><p>Student Management System</p></div></div><button class="sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button></div>
+			<nav class="sidebar-nav"><a href="/index.html"><span class="sidebar-icon">⌂</span><span>Dashboard</span></a><a href="/students.html"><span class="sidebar-icon">S</span><span>Students</span></a><a href="/class-streams.html"><span class="sidebar-icon">C</span><span>Class Streams</span></a><a href="/subjects.html"><span class="sidebar-icon">B</span><span>Subjects</span></a><a href="/results.html"><span class="sidebar-icon">R</span><span>Results</span></a></nav>
+			<div class="sidebar-foot"><div class="sidebar-label">Class Streams</div><div class="sidebar-subtitle">Create streams and attach subjects.</div></div>
+		</aside>
+		<main class="main-content stack">
+			<header class="topbar">
+			<div class="topbar-title">
+				<h1>Class Streams</h1>
+				<p>Stream Management</p>
+			</div>
+			<div class="topbar-actions">
+				<button class="mobile-sidebar-toggle" type="button" data-sidebar-toggle aria-label="Toggle sidebar">☰</button>
+			</div>
+		</header>
+			<section class="section">
+				<div class="header-row"><div>
+					<h2>Class stream setup</h2>
+					<p class="subtitle">Create streams and define the form level they belong to.</p>
+				</div>
+			</div>
+			<form id="classStreamForm" class="form-grid">
+				<div class="field">
+					<label for="streamCode">Stream code</label>
+					<input id="streamCode" name="streamCode" required>
+				</div>
+				<div class="field"><label for="streamName">Stream name</label>
+					<input id="streamName" name="streamName" required>
+				</div>
+				<div class="field">
+					<label for="formLevel">Form level</label>
+					<input id="formLevel" name="formLevel">
+				</div>
+				<div class="field">
+					<label for="active">Active</label>
+					<input id="active" name="active" type="checkbox" checked>
+				</div>
+				<div class="field full"><div class="actions">
+					<button type="submit" class="primary">Save stream</button>
+					<button type="button" class="button" data-reset>Clear</button></div>
+					<div class="notice"></div></div></form></section>
+			<div class="grid">
+				<section class="section">
+					<div class="header-row"><div>
+						<h2>Subject assignment</h2>
+						<p class="subtitle">Attach an existing subject to a class stream.</p>
+					</div>
+				</div>
+					<form id="assignSubjectForm" class="form-grid">
+						<div class="field"><label for="assignStreamId">Class stream</label>
+							<select id="assignStreamId" required></select></div><div class="field">
+								<label for="assignSubjectId">Subject</label><select id="assignSubjectId" required></select>
+							</div>
+							<div class="field full">
+								<div class="actions">
+								<button type="submit" class="primary">Assign subject</button>
+							</div>
+							<div class="notice"></div>
+						</div>
+					</form>
+				</section>
+				<section class="section">
+					<div class="header-row"><div>
+						<h2>Quick links</h2>
+						<p class="subtitle">Move to students or results once the stream is created.</p>
+					</div>
+				</div>
+				<div class="actions">
+					<a class="button" href="/students.html">Add students</a>
+					<a class="button primary" href="/results.html">Open results</a>
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+</html>
