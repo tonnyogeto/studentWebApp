@@ -1,12 +1,14 @@
-# Step 1: Build stage using Maven and Java 21
-FROM maven:3.9.9-eclipse-temurin-21 AS build
+# Stage 1: Build
+FROM maven:3.8.8-eclipse-temurin-17 AS build
 WORKDIR /app
 COPY . .
-RUN ./mvnw clean package -DskipTests || mvn clean package -DskipTests
+# Skip tests to speed up deployment and reduce potential failures
+RUN ./mvnw clean package -DskipTests
 
-# Step 2: Runtime stage using a lightweight JRE 21
-FROM eclipse-temurin:21-jre-jammy
+# Stage 2: Runtime
+FROM eclipse-temurin:17-jre-jammy
 WORKDIR /app
+# Copy the built jar from the build stage
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
